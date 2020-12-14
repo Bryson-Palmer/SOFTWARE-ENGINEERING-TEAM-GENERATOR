@@ -60,7 +60,7 @@ function askUserForManagerInfo() {
         },
 
         {
-            type: "number",
+            type: "input",
             name: "officeNumber",
             message: "Enter your office number: ",
             validate: function validateID( officeNumber ) {
