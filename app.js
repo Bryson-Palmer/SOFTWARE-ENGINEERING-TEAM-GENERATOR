@@ -84,8 +84,8 @@ function askUserForManagerInfo() {
 // Ask user for next employee type
 function askUserForEmployeeType() {
 
-    console.log( chalk.blueBright("\n\n------------------------------------------------\n\n") );
-
+    console.log( chalk.blueBright("\n\n--- Do you want to add another team member? ----") );
+    console.log( chalk.blueBright("\n------------------------------------------------\n\n") );
 
     return inquirer.prompt([
 
@@ -93,7 +93,7 @@ function askUserForEmployeeType() {
         {
             type: "list",
             name: "employeeType",
-            message: "Do you want to add another team member? \n\nPlease choose from the following options.",
+            message: "Please choose from the following options.\n",
             choices: ["Add an Engineer", "Add an Intern", "I'm all done adding team members"],
             
         }
@@ -121,7 +121,7 @@ function askUserForEmployeeType() {
 // Ask user for Engineer info
 function askUserForEngineerInfo() {
 
-    console.log( chalk.blueBright("\n\n\n---------- Now, lets add an Engineer. ---------\n") );
+    console.log( chalk.blueBright("\n\n\n---------- Now, lets add an Engineer. ----------\n") );
     console.log( chalk.blueBright("------------------------------------------------\n\n") );
 
 
@@ -155,7 +155,7 @@ function askUserForEngineerInfo() {
         },
 
         {
-            type: "number",
+            type: "input",
             name: "github",
             message: "Enter their Git Hub account: ",
             validate: function validateID( github ) {
@@ -179,18 +179,52 @@ function askUserForEngineerInfo() {
 // Ask user for Intern info
 function askUserForInternInfo() {
 
+    console.log( chalk.blueBright("\n\n\n----------- Now, lets add an Intern. -----------\n") );
+    console.log( chalk.blueBright("------------------------------------------------\n\n") );
+
+
     return inquirer.prompt([
 
         {
-            message: "Ask a question",
-            name: "replaceMe",
-            type: "input"
-        }
+            type: "input",
+            name: "internName",
+            message: "Enter Intern's name: ",
+            validate: function validateName( internName ) {
+                return internName !== "";
+            }
+        },
+
+        {
+            type: "number",
+            name: "idNumber",
+            message: "Enter thier ID number: ",
+            validate: function validateID( idNumber ) {
+                return idNumber !== "";
+            }
+        },
+
+        {
+            type: "input",
+            name: "email",
+            message: "Enter their email: ",
+            validate: function validateEmail( email ) {
+                return email !== "";
+            }
+        },
+
+        {
+            type: "input",
+            name: "school",
+            message: "Enter their school: ",
+            validate: function validateID( school ) {
+                return school !== "";
+            }
+        },
 
     ]).then( (InternData) => {
 
         // Create new instance of a Manager
-        const newIntern = new Intern ( InternData.name, InternData.id, InternData.email, InternData.school );
+        const newIntern = new Intern ( InternData.internName, InternData.idNumber, InternData.email, InternData.school );
 
         teamMembers.push ( newIntern );
 
@@ -202,6 +236,16 @@ function askUserForInternInfo() {
 
 // Create HTML file
 function createHtmlFile() {
+
+    console.log( chalk.blueBright("\n\n------------------------------------------------\n") );
+    console.log( chalk.greenBright("------------------ That's it! ------------------\n") );
+    console.log( chalk.greenBright("             *          *          *               ") );
+    console.log( chalk.greenBright("            * *        * *        * *              ") );
+    console.log( chalk.greenBright("           ** **      ** **      ** **             ") );
+    console.log( chalk.greenBright("\n-------- You have successfuly used the ---------\n") );
+    console.log( chalk.greenBright("------ Software Engineer Team Generator. -------\n") );
+    console.log( chalk.greenBright(" (HTML is in the output folder in the explorer) \n") );
+    console.log( chalk.blueBright("------------------------------------------------\n\n") );
 
     const htmlContent = render( teamMembers );
 
