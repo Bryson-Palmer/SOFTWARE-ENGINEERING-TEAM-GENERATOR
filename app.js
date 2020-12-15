@@ -250,9 +250,9 @@ function createHtmlFile() {
     const htmlContent = render( teamMembers );
 
     // Use the FS module to create the output file
-    writeFileAsync(outputPath, htmlContent);
-    
-
+    writeFileAsync(outputPath, htmlContent, (err) => {
+        if( err ) throw err;
+    });
 };
 
 askUserForManagerInfo();
