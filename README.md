@@ -26,8 +26,8 @@ so that I have quick access to emails and GitHub profiles
   
 
 ## 🔗 <a id='links'></a> Links
-* Link to [**GitHub**](https://github.com/Bryson-Palmer/SOFTWARE-ENGINEERING-TEAM-GENERATOR.git) </br>
-* Live **URL** for [**SOFTWARE-ENGINEERING-TEAM-GENERATOR**](Add a link to the live url here.) </br>
+* Link to repo on [**GitHub**](https://github.com/Bryson-Palmer/SOFTWARE-ENGINEERING-TEAM-GENERATOR.git) </br>
+* Screencastify video for [**SOFTWARE-ENGINEERING-TEAM-GENERATOR**](https://drive.google.com/file/d/1Q3UIRzGgettgDRVu7QnCQO9g6hKOVsqi/preview) </br>
   
 
 ## 📸 <a id='screenshots'></a> Screenshots
