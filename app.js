@@ -18,7 +18,7 @@ const teamMembers = [];
 
 
 // Ask user for Manager info
-function askUserForManagerInfo() {
+function createManagerInfo() {
 
     console.log( chalk.blueBright("\n\n------------------------------------------------\n") );
     console.log( chalk.greenBright("Welcome to the Software Engineer Team Generator.\n") );
@@ -36,7 +36,7 @@ function askUserForManagerInfo() {
             type: "input",
             name: "firstName",
             message: "Enter your first name: ",
-            validate: function validateName( firstName ) {
+            validate: function validateFirstName( firstName ) {
                 return firstName !== "";
             }
         },
@@ -45,7 +45,7 @@ function askUserForManagerInfo() {
             type: "input",
             name: "lastName",
             message: "Enter your last name: ",
-            validate: function validateName( lastName ) {
+            validate: function validateLastName( lastName ) {
                 return lastName !== "";
             }
         },
@@ -72,7 +72,7 @@ function askUserForManagerInfo() {
             type: "input",
             name: "officeNumber",
             message: "Enter your office number: ",
-            validate: function validateID( officeNumber ) {
+            validate: function validateOfficeNumber( officeNumber ) {
                 return officeNumber !== "";
             }
         },
@@ -84,14 +84,14 @@ function askUserForManagerInfo() {
 
         teamMembers.push( newManager );
         
-        askUserForEmployeeType();
+        newEmployeeType();
 
     });
 
 }
 
 // Ask user for next employee type
-function askUserForEmployeeType() {
+function newEmployeeType() {
 
     console.log( chalk.blueBright("\n\n--- Do you want to add another team member? ----") );
     console.log( chalk.blueBright("\n------------------------------------------------\n\n") );
@@ -113,11 +113,11 @@ function askUserForEmployeeType() {
         // Conditional
         if( newEmployeeChoiceData.employeeType == "Add an Engineer" ) {
             // IF they selected a new Engineer
-            askUserForEngineerInfo();
+            createEngineerInfo();
         
         } else if( newEmployeeChoiceData.employeeType == "Add an Intern" ) {
             // ELSE if the user selected a new Intern
-            askUserForInternInfo();
+            createInternInfo();
 
         } else
             // ELSE create the output
@@ -128,7 +128,7 @@ function askUserForEmployeeType() {
 }
 
 // Ask user for Engineer info
-function askUserForEngineerInfo() {
+function createEngineerInfo() {
 
     console.log( chalk.blueBright("\n\n\n---------- Now, lets add an Engineer. ----------\n") );
     console.log( chalk.blueBright("------------------------------------------------\n\n") );
@@ -139,8 +139,8 @@ function askUserForEngineerInfo() {
         {
             type: "input",
             name: "firstName",
-            message: "Enter your first name: ",
-            validate: function validateName( firstName ) {
+            message: "Enter their first name: ",
+            validate: function validateFirstName( firstName ) {
                 return firstName !== "";
             }
         },
@@ -148,8 +148,8 @@ function askUserForEngineerInfo() {
         {
             type: "input",
             name: "lastName",
-            message: "Enter your last name: ",
-            validate: function validateName( lastName ) {
+            message: "Enter their last name: ",
+            validate: function validateLastName( lastName ) {
                 return lastName !== "";
             }
         },
@@ -176,7 +176,7 @@ function askUserForEngineerInfo() {
             type: "input",
             name: "github",
             message: "Enter their Git Hub account: ",
-            validate: function validateID( github ) {
+            validate: function validateGitHub( github ) {
                 return github !== "";
             }
         },
@@ -188,14 +188,14 @@ function askUserForEngineerInfo() {
 
         teamMembers.push ( newEngineer );
 
-        askUserForEmployeeType();
+        newEmployeeType();
 
     });
 
 }
 
 // Ask user for Intern info
-function askUserForInternInfo() {
+function createInternInfo() {
 
     console.log( chalk.blueBright("\n\n\n----------- Now, lets add an Intern. -----------\n") );
     console.log( chalk.blueBright("------------------------------------------------\n\n") );
@@ -206,8 +206,8 @@ function askUserForInternInfo() {
         {
             type: "input",
             name: "firstName",
-            message: "Enter your first name: ",
-            validate: function validateName( firstName ) {
+            message: "Enter their first name: ",
+            validate: function validateFirstName( firstName ) {
                 return firstName !== "";
             }
         },
@@ -215,8 +215,8 @@ function askUserForInternInfo() {
         {
             type: "input",
             name: "lastName",
-            message: "Enter your last name: ",
-            validate: function validateName( lastName ) {
+            message: "Enter their last name: ",
+            validate: function validateLastName( lastName ) {
                 return lastName !== "";
             }
         },
@@ -243,7 +243,7 @@ function askUserForInternInfo() {
             type: "input",
             name: "school",
             message: "Enter their school: ",
-            validate: function validateID( school ) {
+            validate: function validateSchool( school ) {
                 return school !== "";
             }
         },
@@ -255,7 +255,7 @@ function askUserForInternInfo() {
 
         teamMembers.push ( newIntern );
 
-        askUserForEmployeeType();
+        newEmployeeType();
 
     });
 
@@ -282,4 +282,4 @@ function createHtmlFile() {
     });
 };
 
-askUserForManagerInfo();
+createManagerInfo();

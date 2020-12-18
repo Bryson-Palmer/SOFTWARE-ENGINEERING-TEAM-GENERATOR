@@ -22,7 +22,7 @@ test("Can set the last name via constructor arguments", () => {
   const lastName = "Wonderland";
 
   // Act
-  const e = new Employee(lastName);
+  const e = new Employee("Foo", lastName);
 
   // Assert
   expect(e.lastName).toBe(lastName);
@@ -57,7 +57,7 @@ test("Can get first name via getFirstName()", () => {
 test("Can get last name via getLastName()", () => {
   // Arrange
   const testValue = "Wonderland";
-  const e = new Employee(testValue);
+  const e = new Employee("Foo", testValue);
 
   // Act
   const result = e.getLastName();
