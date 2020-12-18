@@ -1,0 +1,57 @@
+
+.big-box {
+    height: 100vh;
+    background-image: linear-gradient(to right, rgb(17, 177, 235) , lightblue);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.team-heading {
+    background-image: url("/assets/images/blueLines.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.big-box h1 {
+    font-size: 5rem;
+    font-weight: bold;
+    text-shadow: 0 0 3px #0e0d0d4b;
+    color: white;
+}
+
+.team-area{
+    margin: 3rem auto;
+}
+
+.employee-card {
+    box-shadow: 0 0 5px;
+    margin-right: 0.5rem;
+}
+
+@media only screen and (max-width: 1200px){
+    /*Tablets [601px -> 1200px]*/
+.big-box {
+    height: 100%;
+}
+
+    .team-area {
+        flex-direction: column;
+        align-items: center;
+        margin: 3rem 0 2rem 0;
+        
+    }
+
+    .employee-card {
+        width: 80%;
+        box-shadow: 0 0 5px;
+        margin-bottom: 0.5rem;
+    }
+}
+@media only screen and (max-width: 600px){
+	/*Big smartphones [426px -> 600px]*/
+}
+@media only screen and (max-width: 425px){
+    /*Small smartphones [325px -> 425px]*/
+    
+}
